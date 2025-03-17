@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - FitLife Gym</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <div class="bg-gray-800 text-white w-64 py-6 flex flex-col">
+            <div class="px-6 mb-8">
+                <div class="flex items-center">
+                    <i class="fas fa-dumbbell text-blue-500 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold">FitLife Admin</span>
+                </div>
+            </div>
+            <nav class="flex-1">
+                <div class="px-4 space-y-2">
+                    <a href="#" class="block px-4 py-2 rounded-lg bg-blue-600 text-white">
+                        <i class="fas fa-chart-line mr-2"></i>Dashboard
+                    </a>
+                    <a href="#members" class="block px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-700">
+                        <i class="fas fa-users mr-2"></i>Members
+                    </a>
+                    <a href="#classes" class="block px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-700">
+                        <i class="fas fa-calendar-alt mr-2"></i>Classes
+                    </a>
+                    <a href="#facilities" class="block px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-700">
+                        <i class="fas fa-dumbbell mr-2"></i>Facilities
+                    </a>
+                    <a href="#reports" class="block px-4 py-2 rounded-lg text-gray-300 hover:bg-gray-700">
+                        <i class="fas fa-file-alt mr-2"></i>Reports
+                    </a>
+                </div>
+            </nav>
+            <div class="px-6 py-4 border-t border-gray-700">
+                <div class="flex items-center">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="Admin" class="w-8 h-8 rounded-full mr-3">
+                    <div>
+                        <p class="text-sm font-medium">Admin User</p>
+                        <a href="login.html" class="text-xs text-gray-400 hover:text-white">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Navigation -->
+            <header class="bg-white shadow">
+                <div class="px-6 py-4">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-2xl font-bold text-gray-900">Dashboard Overview</h1>
+                        <div class="flex items-center">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                                <i class="fas fa-plus mr-2"></i>New Member
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-y-auto p-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                    <!-- Total Members -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                                <i class="fas fa-users text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500">Total Members</p>
+                                <p class="text-2xl font-bold text-gray-900">248</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-500 text-sm">
+                                <i class="fas fa-arrow-up"></i> 12% increase
+                            </span>
+                            <span class="text-gray-400 text-sm ml-2">from last month</span>
+                        </div>
+                    </div>
+
+                    <!-- Current Occupancy -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-green-100 text-green-600">
+                                <i class="fas fa-chart-pie text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500">Current Occupancy</p>
+                                <p class="text-2xl font-bold text-gray-900">25/100</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Classes -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                                <i class="fas fa-calendar-check text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500">Active Classes</p>
+                                <p class="text-2xl font-bold text-gray-900">12</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-purple-500 text-sm">
+                                <i class="fas fa-clock"></i> 3 classes in progress
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Revenue -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                                <i class="fas fa-dollar-sign text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500">Monthly Revenue</p>
+                                <p class="text-2xl font-bold text-gray-900">$12,845</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-green-500 text-sm">
+                                <i class="fas fa-arrow-up"></i> 8% increase
+                            </span>
+                            <span class="text-gray-400 text-sm ml-2">from last month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Check-ins and Member Management -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <!-- Recent Check-ins -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h2 class="text-lg font-semibold text-gray-900">Recent Check-ins</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img src="https://ui-avatars.com/api/?name=John+Doe" alt="Member" class="w-10 h-10 rounded-full">
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">John Doe</p>
+                                            <p class="text-xs text-gray-500">Premium Member</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-gray-500">2 minutes ago</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img src="https://ui-avatars.com/api/?name=Jane+Smith" alt="Member" class="w-10 h-10 rounded-full">
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Jane Smith</p>
+                                            <p class="text-xs text-gray-500">Basic Member</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-gray-500">15 minutes ago</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img src="https://ui-avatars.com/api/?name=Mike+Johnson" alt="Member" class="w-10 h-10 rounded-full">
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Mike Johnson</p>
+                                            <p class="text-xs text-gray-500">Elite Member</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-gray-500">45 minutes ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member Management -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h2 class="text-lg font-semibold text-gray-900">Member Management</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-4">
+                                <div class="relative">
+                                    <input type="text" placeholder="Search members..." 
+                                        class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                                    <div class="absolute left-3 top-2.5 text-gray-400">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <img src="https://ui-avatars.com/api/?name=Sarah+Wilson" alt="Member" class="w-10 h-10 rounded-full">
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Sarah Wilson</p>
+                                            <p class="text-xs text-gray-500">Premium • Active</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-gray-400 hover:text-gray-600">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center">
+                                        <img src="https://ui-avatars.com/api/?name=Tom+Brown" alt="Member" class="w-10 h-10 rounded-full">
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Tom Brown</p>
+                                            <p class="text-xs text-gray-500">Basic • Inactive</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-gray-400 hover:text-gray-600">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <button class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                                    View All Members
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class Schedule -->
+                <div class="bg-white rounded-lg shadow mb-6">
+                    <div class="p-6 border-b border-gray-200">
+                        <h2 class="text-lg font-semibold text-gray-900">Today's Class Schedule</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr class="text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th class="px-6 py-3">Time</th>
+                                        <th class="px-6 py-3">Class</th>
+                                        <th class="px-6 py-3">Instructor</th>
+                                        <th class="px-6 py-3">Room</th>
+                                        <th class="px-6 py-3">Capacity</th>
+                                        <th class="px-6 py-3">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4">09:00 AM</td>
+                                        <td class="px-6 py-4">
+                                            <div class="font-medium text-gray-900">Yoga Flow</div>
+                                            <div class="text-gray-500 text-sm">60 min</div>
+                                        </td>
+                                        <td class="px-6 py-4">Emma Wilson</td>
+                                        <td class="px-6 py-4">Studio 1</td>
+                                        <td class="px-6 py-4">15/20</td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800">
+                                                In Progress
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4">10:30 AM</td>
+                                        <td class="px-6 py-4">
+                                            <div class="font-medium text-gray-900">HIIT</div>
+                                            <div class="text-gray-500 text-sm">45 min</div>
+                                        </td>
+                                        <td class="px-6 py-4">Mark Johnson</td>
+                                        <td class="px-6 py-4">Studio 2</td>
+                                        <td class="px-6 py-4">18/25</td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-2 py-1 text-xs font-medium rounded-full bg-yellow-100 text-yellow-800">
+                                                Starting Soon
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4">02:00 PM</td>
+                                        <td class="px-6 py-4">
+                                            <div class="font-medium text-gray-900">Strength Training</div>
+                                            <div class="text-gray-500 text-sm">50 min</div>
+                                        </td>
+                                        <td class="px-6 py-4">Chris Davis</td>
+                                        <td class="px-6 py-4">Weights Area</td>
+                                        <td class="px-6 py-4">12/15</td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-2 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800">
+                                                Upcoming
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dashboard Functionality -->
+    <script>
+        // Demo data for occupancy updates
+        let currentOccupancy = 25;
+        const maxOccupancy = 100;
+
+        // Update occupancy every 30 seconds
+        setInterval(() => {
+            // Simulate random occupancy changes
+            const change = Math.floor(Math.random() * 3) - 1; // -1, 0, or 1
+            currentOccupancy = Math.max(0, Math.min(maxOccupancy, currentOccupancy + change));
+            
+            // Update the display
+            document.querySelector('.text-2xl.font-bold:nth-child(2)').textContent = 
+                `${currentOccupancy}/${maxOccupancy}`;
+            
+            // Update progress bar
+            const percentage = (currentOccupancy / maxOccupancy) * 100;
+            document.querySelector('.bg-green-600').style.width = `${percentage}%`;
+        }, 30000);
+    </script>
+</body>
+</html>
